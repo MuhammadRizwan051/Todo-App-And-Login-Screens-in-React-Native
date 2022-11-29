@@ -261,6 +261,91 @@
 //  <------------------------ Login Screen 2 ------------------------>
 
 
+// import React from 'react';
+// import {
+//   StyleSheet,
+//   Text,
+//   Image,
+//   TextInput,
+//   View,
+//   TouchableOpacity,
+// } from 'react-native';
+
+
+// function App() {
+//   return <>
+//     <View style={styles.loginScreenContainer}>
+//       <Text style={styles.heading}>Login Screen 2</Text>
+//       <View style={styles.loginFormView}>
+//         <Image source={{ uri: "https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-login-button-icon-126999949.jpg" }} style={{ width: 100, height: 100 }} />
+//         <TextInput placeholder="Username" placeholderTextColor={'black'} style={styles.loginFormTextInput} />
+//         <TextInput placeholder="Password" placeholderTextColor={'black'} style={styles.loginFormTextInput} secureTextEntry={true} />
+//         <TouchableOpacity style={styles.loginBtn} >
+//           <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, }}>Login</Text>
+//         </TouchableOpacity>
+//       </View>
+//     </View>
+//   </>
+// }
+
+// export default App;
+
+// const styles = StyleSheet.create({
+
+//   loginScreenContainer: {
+//     height: '100%',
+//     paddingLeft: 15,
+//     paddingRight: 15,
+//     justifyContent: "center"
+//   },
+//   heading: {
+//     textAlign: 'center',
+//     fontSize: 24,
+//     backgroundColor: "#344D67",
+//     fontWeight: 'bold',
+//     color: 'white',
+//     marginBottom: 30,
+//     borderRadius: 10,
+//     paddingVertical: 5
+//   },
+//   loginFormView: {
+//     borderRadius: 15,
+//     paddingVertical: 40,
+//     alignItems: "center",
+//     justifyContent: 'center'
+//   },
+//   loginFormTextInput: {
+//     fontSize: 16,
+//     borderWidth: 3,
+//     color: 'white',
+//     borderColor: 'black',
+//     marginTop: 15,
+//     width: "100%",
+//     borderRadius: 10,
+//     paddingHorizontal: 20
+//   },
+//   loginBtn: {
+//     width: '50%',
+//     backgroundColor: '#285430',
+//     paddingVertical: 10,
+//     borderRadius: 5,
+//     marginTop: 30
+//   }
+// });
+
+
+
+
+
+
+
+
+
+
+
+//  <------------------------ Login Screen 3 ------------------------>
+
+
 import React from 'react';
 import {
   StyleSheet,
@@ -268,6 +353,7 @@ import {
   Image,
   TextInput,
   View,
+  ImageBackground,
   TouchableOpacity,
 } from 'react-native';
 
@@ -275,9 +361,9 @@ import {
 function App() {
   return <>
     <View style={styles.loginScreenContainer}>
-      <Text style={styles.heading}>Login Screen 2</Text>
+      <Text style={styles.heading}>Login Screen 3</Text>
       <View style={styles.loginFormView}>
-        <Image source={{ uri: "https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-login-button-icon-126999949.jpg" }} style={{ width: 100, height: 100 }} />
+        <Image source={{ uri: "https://png.pngtree.com/png-vector/20191003/ourmid/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1786166.jpg" }} style={{ width: 100, height: 100 }} />
         <TextInput placeholder="Username" placeholderTextColor={'black'} style={styles.loginFormTextInput} />
         <TextInput placeholder="Password" placeholderTextColor={'black'} style={styles.loginFormTextInput} secureTextEntry={true} />
         <TouchableOpacity style={styles.loginBtn} >
@@ -296,39 +382,140 @@ const styles = StyleSheet.create({
     height: '100%',
     paddingLeft: 15,
     paddingRight: 15,
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: '#DD5353'
   },
   heading: {
     textAlign: 'center',
     fontSize: 24,
-    backgroundColor: "#344D67",
+    color: "#344D67",
     fontWeight: 'bold',
-    color: 'white',
+    backgroundColor: 'white',
     marginBottom: 30,
     borderRadius: 10,
     paddingVertical: 5
   },
   loginFormView: {
+    backgroundColor:'#EFEFEF',
+    borderWidth: 2,
     borderRadius: 15,
     paddingVertical: 40,
+    paddingHorizontal: 20,
     alignItems: "center",
     justifyContent: 'center'
   },
   loginFormTextInput: {
     fontSize: 16,
-    borderWidth: 3,
+    borderLeftWidth: 5,
+    borderRightWidth: 5,
+    borderTopWidth: 2,
+    borderBottomWidth: 2,
     color: 'white',
     borderColor: 'black',
-    marginTop: 15,
+    marginTop: 5,
+    marginBottom: 15,
     width: "100%",
     borderRadius: 10,
     paddingHorizontal: 20
   },
   loginBtn: {
-    width: '50%',
-    backgroundColor: '#285430',
+    width: '100%',
+    backgroundColor: '#B73E3E',
     paddingVertical: 10,
     borderRadius: 5,
-    marginTop: 30
+    marginTop: 40
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+//  <------------------------ Login Screen 4 ------------------------>
+
+
+// import React from 'react';
+// import {
+//   StyleSheet,
+//   Text,
+//   Image,
+//   TextInput,
+//   View,
+//   ImageBackground,
+//   TouchableOpacity,
+// } from 'react-native';
+// import loginBackground_1 from './assets/loginBackground_1.jpg'
+
+
+// function App() {
+//   return <>
+//     <ImageBackground source={loginBackground_1}  >
+//       <View style={styles.loginScreenContainer}>
+//         <Text style={styles.heading}>Login Screen 1</Text>
+//         <View style={styles.loginFormView}>
+//           <Image source={{ uri: "https://www.nicepng.com/png/full/207-2073249_open-user-icon-for-login-page.png" }} style={{ width: 100, height: 100 }} />
+//           <TextInput placeholder="Username" placeholderTextColor={'black'} style={styles.loginFormTextInput} />
+//           <TextInput placeholder="Password" placeholderTextColor={'black'} style={styles.loginFormTextInput} secureTextEntry={true} />
+//           <TouchableOpacity style={styles.loginBtn} >
+//             <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, }}>Login</Text>
+//           </TouchableOpacity>
+//         </View>
+//       </View>
+//     </ImageBackground>
+//   </>
+// }
+
+// export default App;
+
+// const styles = StyleSheet.create({
+
+//   loginScreenContainer: {
+//     height: '100%',
+//     paddingLeft: 15,
+//     paddingRight: 15,
+//     justifyContent: "center"
+//   },
+//   heading: {
+//     textAlign: 'center',
+//     fontSize: 24,
+//     color: "#344D67",
+//     fontWeight: 'bold',
+//     backgroundColor:'white',
+//     marginBottom: 30,
+//     borderRadius: 10,
+//     paddingVertical: 5
+//   },
+//   loginFormView: {
+//     borderWidth: 2,
+//     borderRadius: 15,
+//     paddingVertical: 40,
+//     paddingHorizontal: 20,
+//     alignItems: "center",
+//     justifyContent: 'center'
+//   },
+//   loginFormTextInput: {
+//     fontSize: 16,
+//     borderBottomWidth: 5,
+//     color: 'white',
+//     borderColor: 'black',
+//     marginTop: 5,
+//     marginBottom: 15,
+//     width: "100%",
+//     borderRadius: 10,
+//     paddingHorizontal: 20
+//   },
+//   loginBtn: {
+//     width: '50%',
+//     backgroundColor: '#344D67',
+//     paddingVertical: 10,
+//     borderRadius: 5,
+//     marginTop: 40
+//   }
+// });
