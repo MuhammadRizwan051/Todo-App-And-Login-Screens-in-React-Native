@@ -168,7 +168,97 @@
 
 
 
-//  <------------------------ Login Screen ------------------------>
+//  <------------------------ Login Screen 1 ------------------------>
+
+
+// import React from 'react';
+// import {
+//   StyleSheet,
+//   Text,
+//   Image,
+//   TextInput,
+//   View,
+//   ImageBackground,
+//   TouchableOpacity,
+// } from 'react-native';
+// import loginBackground_1 from './assets/loginBackground_1.jpg'
+
+
+// function App() {
+//   return <>
+//     <ImageBackground source={loginBackground_1}  >
+//       <View style={styles.loginScreenContainer}>
+//         <Text style={styles.heading}>Login Screen 1</Text>
+//         <View style={styles.loginFormView}>
+//           <Image source={{ uri: "https://www.nicepng.com/png/full/207-2073249_open-user-icon-for-login-page.png" }} style={{ width: 100, height: 100 }} />
+//           <TextInput placeholder="Username" placeholderTextColor={'black'} style={styles.loginFormTextInput} />
+//           <TextInput placeholder="Password" placeholderTextColor={'black'} style={styles.loginFormTextInput} secureTextEntry={true} />
+//           <TouchableOpacity style={styles.loginBtn} >
+//             <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, }}>Login</Text>
+//           </TouchableOpacity>
+//         </View>
+//       </View>
+//     </ImageBackground>
+//   </>
+// }
+
+// export default App;
+
+// const styles = StyleSheet.create({
+
+//   loginScreenContainer: {
+//     height: '100%',
+//     paddingLeft: 15,
+//     paddingRight: 15,
+//     justifyContent: "center"
+//   },
+//   heading: {
+//     textAlign: 'center',
+//     fontSize: 24,
+//     color: "#344D67",
+//     fontWeight: 'bold',
+//     backgroundColor:'white',
+//     marginBottom: 30,
+//     borderRadius: 10,
+//     paddingVertical: 5
+//   },
+//   loginFormView: {
+//     borderWidth: 2,
+//     borderRadius: 15,
+//     paddingVertical: 40,
+//     paddingHorizontal: 20,
+//     alignItems: "center",
+//     justifyContent: 'center'
+//   },
+//   loginFormTextInput: {
+//     fontSize: 16,
+//     borderBottomWidth: 5,
+//     color: 'white',
+//     borderColor: 'black',
+//     marginTop: 5,
+//     marginBottom: 15,
+//     width: "100%",
+//     borderRadius: 10,
+//     paddingHorizontal: 20
+//   },
+//   loginBtn: {
+//     width: '50%',
+//     backgroundColor: '#344D67',
+//     paddingVertical: 10,
+//     borderRadius: 5,
+//     marginTop: 40
+//   }
+// });
+
+
+
+
+
+
+
+
+
+//  <------------------------ Login Screen 2 ------------------------>
 
 
 import React from 'react';
@@ -178,27 +268,23 @@ import {
   Image,
   TextInput,
   View,
-  ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import loginBackground_1 from './assets/loginBackground_1.jpg'
 
 
 function App() {
   return <>
-    <ImageBackground source={loginBackground_1}  >
-      <View style={styles.loginScreenContainer}>
-        <Text style={styles.heading}>Login Screen 1</Text>
-        <View style={styles.loginFormView}>
-          <Image source={{ uri: "https://www.nicepng.com/png/full/207-2073249_open-user-icon-for-login-page.png" }} style={{ width: 100, height: 100 }} />
-          <TextInput placeholder="Username" placeholderTextColor={'black'} style={styles.loginFormTextInput} />
-          <TextInput placeholder="Password" placeholderTextColor={'black'} style={styles.loginFormTextInput} secureTextEntry={true} />
-          <TouchableOpacity style={styles.loginBtn} >
-            <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, }}>Login</Text>
-          </TouchableOpacity>
-        </View>
+    <View style={styles.loginScreenContainer}>
+      <Text style={styles.heading}>Login Screen 2</Text>
+      <View style={styles.loginFormView}>
+        <Image source={{ uri: "https://thumbs.dreamstime.com/b/vector-illustration-isolated-white-background-login-button-icon-126999949.jpg" }} style={{ width: 100, height: 100 }} />
+        <TextInput placeholder="Username" placeholderTextColor={'black'} style={styles.loginFormTextInput} />
+        <TextInput placeholder="Password" placeholderTextColor={'black'} style={styles.loginFormTextInput} secureTextEntry={true} />
+        <TouchableOpacity style={styles.loginBtn} >
+          <Text style={{ textAlign: 'center', color: 'white', fontSize: 18, }}>Login</Text>
+        </TouchableOpacity>
       </View>
-    </ImageBackground>
+    </View>
   </>
 }
 
@@ -215,37 +301,34 @@ const styles = StyleSheet.create({
   heading: {
     textAlign: 'center',
     fontSize: 24,
-    color: "#344D67",
+    backgroundColor: "#344D67",
     fontWeight: 'bold',
-    backgroundColor:'white',
+    color: 'white',
     marginBottom: 30,
     borderRadius: 10,
     paddingVertical: 5
   },
   loginFormView: {
-    borderWidth: 2,
     borderRadius: 15,
     paddingVertical: 40,
-    paddingHorizontal: 20,
     alignItems: "center",
     justifyContent: 'center'
   },
   loginFormTextInput: {
     fontSize: 16,
-    borderBottomWidth: 5,
+    borderWidth: 3,
     color: 'white',
     borderColor: 'black',
-    marginTop: 5,
-    marginBottom: 15,
+    marginTop: 15,
     width: "100%",
     borderRadius: 10,
     paddingHorizontal: 20
   },
   loginBtn: {
     width: '50%',
-    backgroundColor: '#344D67',
+    backgroundColor: '#285430',
     paddingVertical: 10,
     borderRadius: 5,
-    marginTop: 40
+    marginTop: 30
   }
 });
