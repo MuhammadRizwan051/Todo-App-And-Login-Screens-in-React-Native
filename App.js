@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { View, Text, TextInput, StyleSheet, TouchableOpacity, Button } from "react-native";
+import { View, Text, TextInput, StyleSheet, TouchableOpacity, Button, Image, TouchableHighlight, ImageBackground } from "react-native";
+import addImage from './assets/addIcon.png'
+import editImage from './assets/editIcon.png'
+import deleteImage from './assets/deleteIcon.png'
+import backgroundImage from './assets/backgroundImage.jpg'
 
 function App() {
   let [txt, setTxt] = useState('')
@@ -44,27 +48,37 @@ function App() {
   // }, [add])
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.heading}>Todo App</Text>
-      <TextInput value={txt} style={styles.inputField} placeholder="Enter Text" onChangeText={(e) => setTxt(e)}></TextInput>
-      {/* <Button title='add' style={styles.addBtn} onPress={add}></Button> */}
-      <TouchableOpacity style={styles.addBtn} onPress={add}><Text style={{ color: 'white', textAlign: 'center' }}>Add</Text></TouchableOpacity>
-      {list.length > 0 ?
-        <TouchableOpacity style={[styles.deleteAllBtn, { backgroundColor: 'crimson' }]} onPress={deleteAll}><Text style={{ color: 'white', textAlign: 'center' }}>Delete All</Text></TouchableOpacity>
-        // <Button title='Delete All' onPress={deleteAll}></Button>
-        : ""
-      }
-      {list.length > 0 ? <Text style={{ textAlign: 'center', color: 'royalblue', marginVertical: 10, fontSize: 20, textDecoration: 'underline' }}>{`Total Todos: ${list.length}`}</Text> : <Text style={{ textAlign: 'center', color: 'royalblue', marginVertical: 10, fontSize: 20, textDecoration: 'underline' }}>No Todos to Display</Text>}
+    <>
+      <ImageBackground source={backgroundImage} >
+        <View style={styles.container}>
+          <Text style={styles.heading}>Todo App</Text>
+          <View style={{ flexDirection: 'row', marginVertical: 35, }}>
 
-      {list.map((e, i) => <View key={i} style={{ flexDirection: 'row' }}>
-        <Text>{e}</Text>
-        {/* <View style={{position:'absolue', right:0}}> */}
-        <TouchableOpacity style={[styles.editBtn,]} onPress={() => edit(e, i)}><Text style={{ color: 'white', textAlign: 'center' }}>Edit</Text></TouchableOpacity>
-        <TouchableOpacity style={[styles.deleteBtn,]} onPress={() => del(e)}><Text style={{ color: 'white', textAlign: 'center' }}>Delete</Text></TouchableOpacity>
-        {/* </View> */}
-      </View>
-      )}
-    </View>
+            <TextInput value={txt} style={styles.inputField} placeholderTextColor={'white'} placeholder="Enter Text" onChangeText={(e) => setTxt(e)}></TextInput>
+            <TouchableOpacity onPress={add} style={[styles.addBtn]} >
+              <Image source={addImage} style={{ width: 25, height: 25 }} />
+            </TouchableOpacity>
+            {/* <TouchableOpacity style={styles.addBtn} onPress={add}><Text style={{ color: 'white', textAlign: 'center' }}>Add</Text></TouchableOpacity> */}
+          </View>
+          {list.length > 0 ?
+            <TouchableOpacity style={[styles.deleteAllBtn, { backgroundColor: 'crimson' }]} onPress={deleteAll}><Text style={{ color: 'white', textAlign: 'center' }}>Delete All</Text></TouchableOpacity>
+            : ""
+          }
+          {list.length > 0 ? <Text style={styles.countOrNoCount}>{`Total: ${list.length}`}</Text> : <Text style={styles.countOrNoCount}>No Todos to Display</Text>}
+
+          {list.map((e, i) => <View key={i} style={styles.todoListView}>
+            <Text style={styles.todoText}>{e}</Text>
+            <TouchableOpacity onPress={() => edit(e, i)} style={{ width: '10%' }} >
+              <Image source={editImage} style={styles.editAndDelete} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => del(e)} style={{ width: '10%' }} >
+              <Image source={deleteImage} style={styles.editAndDelete} />
+            </TouchableOpacity>
+          </View>
+          )}
+        </View>
+      </ImageBackground>
+    </>
   )
 }
 
@@ -72,44 +86,69 @@ export default App
 
 const styles = StyleSheet.create({
   container: {
-    padding: 5,
-    marginVertical: 20,
-    marginHorizontal: 60,
+    paddingHorizontal: 2,
+    paddingVertical: 1,
+    height: '100%',
+    width: '100%'
   },
   heading: {
-    color: 'crimson',
+    backgroundColor: 'royalblue',
+    paddingVertical: 8,
+    color: 'white',
     fontSize: 26,
     fontWeight: 'bold',
-    textAlign: 'center'
+    textAlign: 'center',
+    textShadowColor: 'rgba(0, 0, 0, 0.75)',
+    textShadowOffset: { width: 3, height: 5 },
+    textShadowRadius: 10
   },
   inputField: {
-    // width:'80%',
-    marginVertical: 15,
+    width: '85%',
     borderBottomWidth: 1,
-    padding: 0
+    padding: 0,
+    color: 'white',
+    borderColor: 'white',
+    fontSize: 16,
+    paddingHorizontal: 15
   },
   addBtn: {
-    width: '20%',
+    width: '10%',
     paddingVertical: 8,
-    width: '100%',
-    backgroundColor: 'grey',
+    marginHorizontal: 12,
+    backgroundColor: 'white',
+    borderRadius: 8,
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   deleteAllBtn: {
     marginVertical: 10,
     paddingVertical: 8,
     width: '100%',
-    // backgroundColor: 'crimson',
   },
-  editBtn: {
-    width: '20%',
-    paddingVertical: 8,
-    backgroundColor: 'green',
-
+  todoListView: {
+    flexDirection: 'row',
+    borderWidth: 5,
+    borderColor: 'white',
+    borderRadius: 20,
+    backgroundColor: 'white',
+    marginBottom: 15,
+    padding: 5
   },
-  deleteBtn: {
-    width: '20%',
-    paddingVertical: 8,
-    backgroundColor: 'grey',
-
+  todoText: {
+    width: '80%',
+    color: 'black'
+  },
+  editAndDelete: {
+    width: 25,
+    height: 25
+  },
+  countOrNoCount: {
+    textAlign: 'center',
+    color: 'white',
+    fontWeight: 'bold',
+    marginVertical: 15,
+    fontSize: 25,
+    textDecoration: 'underline'
   }
 })
