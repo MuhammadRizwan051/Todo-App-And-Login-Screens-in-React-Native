@@ -22,6 +22,7 @@ function App() {
 
   let deleteAll = () => {
     setList([])
+    setTxt('')
   }
 
   let edit = (e, i) => {
@@ -133,7 +134,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     backgroundColor: 'white',
     marginBottom: 15,
-    padding: 5
+    padding: 5,
+    marginHorizontal:10
   },
   todoText: {
     width: '80%',
